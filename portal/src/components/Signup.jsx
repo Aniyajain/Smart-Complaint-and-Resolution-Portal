@@ -1,4 +1,7 @@
 import { Link } from "react-router-dom";
+import { FaUser } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
+
 import "./Signup.css"
 function Signup(){
     return(
@@ -15,9 +18,16 @@ function Signup(){
             </nav>
             <div id="box">
                 <h1 style={{color: "blue"}}>Sign-Up</h1>
+                <label>
+  <FaUser style={{  marginRight: "8px" }} />
+  First Name
+</label>
+<br />
                 <input type="text" placeholder=" First Name" style={{border: "2px solid black", width: "350px", borderRadius: "10px", height: "20px", padding: "8px", margin: "15px"}} />
                 <br />
                 <input type="text" placeholder=" Last Name" style={{border: "2px solid black", width: "350px", borderRadius: "10px", height: "20px", padding: "8px", margin: "15px"}} />
+                <br />
+                <label >📧 Email</label>
                 <br />
                 <input type="email" placeholder=" Email-Id" style={{border: "2px solid black", width: "350px", borderRadius: "10px", height: "20px", padding: "8px", margin: "15px"}}/>
                  <br />
