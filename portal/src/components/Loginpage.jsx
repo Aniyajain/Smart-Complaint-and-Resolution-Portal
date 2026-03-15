@@ -7,8 +7,9 @@ function Loginpage(){
                  <h1>Smart Complaint and Resolution Portal</h1>
 
                 <div id="nav-links">
-                <Link to="/">Login/Sign-up</Link>
-                 <Link to="/home">Home </Link>
+                <button><Link to="/login">Login</Link></button>
+                <button><Link to="/signup">Sign-up</Link></button>
+                 {/* <button><Link to="/home">Home </Link></button> */}
                 </div>
 
                
