@@ -1,111 +1,169 @@
 /* Reset */
 
 body{
-    margin: 0;
-    padding: 0;
+    margin:0;
+    padding:0;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #2E21A2;
+    background-color:#2E21A2;
 }
 
 /* Main container */
 
 #main{
-    min-height: 100vh;
-}
-
-/* ================= NAVBAR ================= */
-
-nav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 12px 25px;
-    margin: 15px;
-
-    border-radius: 12px;
-
-    background: rgba(255,255,255,0.08);
-    backdrop-filter: blur(8px);
-
-    color: white;
-}
-
-/* Logo + Heading */
-
-#nav-left{
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-#logo{
-    width: 55px;
-    height: 65px;
-    border-radius: 8px;
-}
-
-#nav-left h1{
-    font-size: 22px;
-    font-weight: 600;
-}
-
-/* ================= NAV BUTTONS ================= */
-
-#nav-links{
-    display: flex;
-    gap: 15px;
-}
-
-.btn{
-    border-radius: 8px;
-    background: #4f6cff;
-    width: 110px;
-    height: 40px;
-    border: none;
-    transition: 0.3s;
-}
-
-.btn:hover{
-    background:#6b84ff;
-    cursor:pointer;
-}
-
-.btn a{
-    text-decoration: none;
-    color: white;
-    font-weight: 500;
+    min-height:100vh;
 }
 
 /* ================= PAGE CONTENT ================= */
 
 #content{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 60px 80px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:60px 80px;
 }
 
-/* Left text section */
+/* Left text */
 
 #left{
-    color: white;
-    max-width: 500px;
+    color:white;
+    max-width:500px;
 }
 
 #left h2{
-    font-size: 36px;
-    margin-bottom: 10px;
+    font-size:36px;
+    margin-bottom:10px;
+}
+
+#left h4{
+    font-weight:400;
 }
 
 #left p{
-    font-size: 18px;
+    font-size:18px;
 }
 
 /* Right Image */
 
 #right img{
-    width: 600px;
-    height: auto;
+    width:600px;
+    height:auto;
+    border-radius: 30px;
+    box-shadow: 0px 0px 40px black;
+}
+.typewriter {
+    color: rgb(225, 223, 86);
+  font-size: 2.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+   width: 31ch;; 
+  border-right: 0.15em solid #000;
+  animation: typing 3s steps(31, end), blink 0.5s step-end infinite alternate;
+}
+/* reveal 1s ease forwards 4s */
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+/* @keyframes reveal {
+  from { max-width: 31ch; }
+  to { max-width: 100%; } 
+} */
+
+#below-left{
+    display: flex;
+    gap: 18px;
+    margin-top: 50px;
+}
+
+/* #b1,#b2,#b3{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    border-radius: 8px;
+    border: 1px solid white;
+    width: 350px;
+    height: 70px;
+    padding: 12px;
+    text-align: center;
+   color:white;
+    backdrop-filter: blur(6px);
+    box-shadow:0px 5px 15px rgba(0,0,0,0.3);
+  transition:0.3s;
+  background: rgba(255,255,255,0.08);
+} */
+#b1,#b2,#b3{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    width:200px;
+    height:60px;
+
+    padding:10px 14px;
+
+    border-radius:10px;
+    border:1px solid rgba(255,255,255,0.3);
+
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(6px);
+
+    color:white;
+
+    box-shadow:0px 5px 12px rgba(0,0,0,0.3);
+
+    transition:0.3s;
+}
+
+/* Hover effect */
+
+#b1:hover,#b2:hover,#b3:hover{
+    transform:translateY(-4px);
+    background:rgba(255,255,255,0.18);
+     box-shadow:0px 8px 20px rgba(255,255,255,0.25);
+}
+
+.icon{
+    font-size:20px;
+    color:#55efc4;
+}
+
+.stat-text{
+    display:flex;
+    flex-direction:column;
+}
+
+.stat-text h3{
+    margin:0;
+    font-size:18px;
+}
+
+.stat-text p{
+    margin:0;
+    font-size:13px !important;;
+    opacity:0.8;
+}
+#below-boxes{
+    display: flex;
+    margin-top: 30px;
+    padding: 12px;
+    gap: 12px;
+    
+}
+
+#below-boxes a{
+    text-decoration: none;
+}
+.primary-btn:hover{
+transition:0.3s;
+     transform:translateY(-4px);
+
+}
+.secondary-btn:hover{
+    transition:0.3s;
+     transform:translateY(-4px);
 }

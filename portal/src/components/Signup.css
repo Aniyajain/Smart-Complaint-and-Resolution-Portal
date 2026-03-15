@@ -1,31 +1,97 @@
 body{
-    margin: 0;
-    padding: 0;
+    margin:0;
+    padding:0;
 }
-#main{
-    background: linear-gradient(white , rgb(31, 31, 130)) ;
-}
-nav{
-    border: 2px solid black;
-    display: flex;
-    justify-content: space-between;
-    background-color: rgb(32, 88, 186);
-   
-    border-radius: 10px;
-    color: aliceblue;
-    padding: 12px;
-    margin-left: 15px;
-    margin-right: 15px;
-    align-items: center;
 
-    
+#main{
+    min-height:100vh;
 }
+
+/* Signup Box */
+
 #box{
-    width:500px;
-    height: 550px;
-    background-color: aliceblue;
-    border: 2px solid black;
-    text-align: center;
-    margin: 50px auto;
-    border-radius: 20px;
+    width:540px;
+    background-color:aliceblue;
+    border:2px solid black;
+    margin:50px auto;
+    border-radius:20px;
+    overflow:hidden;
+    text-align:center;
+}
+
+/* Blue Header */
+
+#signup-header{
+    background:rgb(37,107,226);
+    color:white;
+    width:100%;
+    padding:20px 10px;
+}
+
+/* remove default spacing */
+
+#signup-header h1{
+    margin:0;
+}
+
+#signup-header p{
+    margin-top:6px;
+}
+
+/* Content */
+
+#content-div{
+    padding:20px;
+}
+
+/* Inputs */
+
+.input{
+    border:2px solid black;
+    width:350px;
+    border-radius:10px;
+    height:35px;
+    padding:8px;
+    margin-top:5px;
+}
+
+/* Labels */
+
+.label-box{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-top:15px;
+    margin-left:85px;
+    color:black;
+    font-weight:500;
+}
+
+/* Terms checkbox */
+
+.terms{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-top:25px;
+    margin-left:85px;
+}
+
+/* Signup button */
+
+.signup-btn{
+    background:rgba(14, 18, 25, 0.49);
+    color:white;
+    width:370px;
+    height:50px;
+    border-radius:10px;
+    border:none;
+    cursor:pointer;
+    font-weight:800;
+    font-size:larger; 
+    margin-top:25px;
+}
+
+.signup-btn:hover{
+    background:rgb(37,107,226);
 }

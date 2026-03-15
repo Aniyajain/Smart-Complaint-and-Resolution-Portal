@@ -4,6 +4,5 @@ body{
 }
 
 main{
-    background: linear-gradient(white, rgb(11, 11, 94));
-    height: 100vh;
+    min-height: 100vh;
 }
