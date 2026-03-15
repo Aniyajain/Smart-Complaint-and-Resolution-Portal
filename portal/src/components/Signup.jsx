@@ -48,7 +48,7 @@ function Signup(){
                     <button className="signup-btn">Signup</button>
 
                     <p>
-                        Already signed up? <Link to="/login">Login</Link>
+                        Already signed up? <Link to="/login" style={{color: "rgb(37,107,226)"}}>Login</Link>
                     </p>
 
                 </div>
