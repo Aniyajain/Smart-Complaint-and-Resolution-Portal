@@ -1,9 +1,16 @@
 import { Link } from "react-router-dom";
 import Navbar from "../CompEveryWhere/Navbar";
 import { FaEnvelope, FaLock } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import "./Loginpage.css";
 
 function Loginpage(){
+    const navigate = useNavigate();
+
+    const handleLogin = ()=>{
+        //later on backend logic here
+        navigate("/dashboard");
+    };
     return(
         <div id="c1">
 
@@ -38,7 +45,7 @@ function Loginpage(){
 
                 <br />
 
-                <button className="login-btn">Login</button>
+                <button onClick={handleLogin} className="login-btn">Login</button>
 
                 <p>
                     Forget <Link to="#" className="link" style={{color:"black"}}>Password?</Link>

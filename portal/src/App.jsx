@@ -6,6 +6,7 @@ import Signup from "./components/Signup";
 import Profile from "./components/Profile";
 import Track from "./components/Track";
 import Interface from "./components/Interface";
+import Dashboard_user from "./Pages/Dashboard_user";
 function App(){
   return(
   <BrowserRouter>
@@ -17,6 +18,7 @@ function App(){
           <Route path="/register" element={<Register />} />
            <Route path="/track" element={<Track />} />
             <Route path="/login" element={<Loginpage />} />
+            <Route path="/dashboard" element={<Dashboard_user />} />
       </Routes>
     </BrowserRouter>
   );
