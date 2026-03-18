@@ -15,7 +15,7 @@ function Loginpage(){
         <div id="c1">
 
             {/* Navbar */}
-             <Navbar />
+             <Navbar  type="loginpage" />
 
             <div id="login-box">
                 <div style={{background: "rgb(37,107,226)", color:"white", borderRadius: "10px", height:"130px", textAlign:"center", padding: "5px" }}><h1>Welcome Back </h1>

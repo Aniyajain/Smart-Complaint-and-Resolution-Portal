@@ -13,7 +13,7 @@ function Interface(){
         <div id="main">
 
             {/* Navbar */}
-            <Navbar />
+            <Navbar  type = "Interface"/>
 
             <div id="content">
                 <div id="left">
@@ -50,10 +50,10 @@ function Interface(){
                      </div> 
 
     <div id="below-boxes">
-             <Link to="/login">   <button style={{border: "1px solid white", borderRadius:"20px", background:"linear-gradient(90deg,#4f8dfd,#9a5bff)" , width: "150px", height: "50px", fontWeight:"bold", color:"white" , display:"flex",
-alignItems:"center", justifyContent:"center",gap:"8px", }} className="primary-btn">Get Started Now <FaArrowRight  /> </button></Link>
-                <button style={{border: "1px solid white", borderRadius:"20px",  background:"transparent" , width: "150px", height: "50px", fontWeight:"bold", color:"white", opacity:"0.8" ,display:"flex",
-alignItems:"center", justifyContent:"center",gap:"8px",backdropFilter:"blur(6px)" }} className="secondary-btn"><FaPlay />Watch Demo</button>
+             <Link to="/login">   <button style={{border: "1px solid white", borderRadius:"15px", background:"linear-gradient(90deg,#4f8dfd,#9a5bff)" , width: "190px", height: "50px", fontWeight:"bold", color:"white" , display:"flex",
+alignItems:"center", justifyContent:"center",gap:"8px",  fontSize:"16px" }} className="primary-btn">Get Started Now <FaArrowRight  /> </button></Link>
+                <button style={{border: "1px solid white", borderRadius:"15px",  background:"transparent" , width: "190px", height: "50px", fontWeight:"bold", color:"white", opacity:"0.8" ,display:"flex",
+alignItems:"center", justifyContent:"center",gap:"8px",backdropFilter:"blur(6px)", fontSize:"15px",  }} className="secondary-btn"><FaPlay />Watch Demo</button>
                         
                 
      </div>                             

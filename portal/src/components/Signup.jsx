@@ -7,7 +7,7 @@ function Signup(){
     return(
         <div id="main">
 
-            <Navbar />
+            <Navbar type="signup"  />
 
             <div id="box">
 

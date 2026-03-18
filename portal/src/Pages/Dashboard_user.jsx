@@ -4,7 +4,7 @@ import "./Dashboard_user.css";
 function Dashboard_user(){
     return(
         <div>
-            <Navbar/>
+            <Navbar type="dashboard"/>
             
             <div id="sidebar">
 
