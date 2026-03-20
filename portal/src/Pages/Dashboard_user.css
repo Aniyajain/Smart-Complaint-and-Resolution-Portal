@@ -50,8 +50,9 @@
 
 #sidebar a:hover {
    border-radius: 10px;
-    color: blue;
+    color: #2E21A2;
     background-color: #d1d0d0;
+    font-weight: bold;
 }
 
 
@@ -62,7 +63,7 @@
 }
 .main-center{
     background-color: rgba(223, 230, 223, 0.667);
-    width: 1130px;
+    width: 1175px;
     border-radius: 10px;
     padding: 7px;
     padding-left:40px;
