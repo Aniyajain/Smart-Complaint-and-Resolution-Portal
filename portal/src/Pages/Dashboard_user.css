@@ -29,6 +29,11 @@
      position: fixed; 
      left: 0;
     top: 70px;
+    height: 585px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* gap: 90px; */
     
 }
 
@@ -45,6 +50,7 @@
     font-weight: 500;
    margin: 0px;
     border: none;
+    
     
 }
 
@@ -63,7 +69,7 @@
 }
 .main-center{
     background-color: rgba(223, 230, 223, 0.667);
-    width: 1175px;
+    width: 1130px;
     border-radius: 10px;
     padding: 7px;
     padding-left:40px;
@@ -84,7 +90,7 @@
     /* text-align: center; */
     padding: 30px;
     background-color: #ded5d5;
-    color: black;
+    color: #2E21A2;
     font-size: 20px;
     font-weight: bold;
     align-items: center;
@@ -151,4 +157,62 @@ button:hover{
 }
 #complaint-btn{
     margin: 100px 370px;
+}
+#complaint-stats{
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+.cards-recentcomplaint{
+    background-color: #cdc9c9;
+    border-radius: 10px;
+    width: 160px;
+    height: 120px;
+    text-align: center;
+    padding: 10px;
+    color: #2E21A2;
+    font-weight: bold;
+    display: flex;
+    padding-top: 12px;
+    font-size: 18px;
+    /* align-items: ; */
+   
+    /* align-items: center;      vertical center */
+    gap: 10px; 
+
+}
+.icon-recent{
+    border-radius: 7px;
+    background-color: #7fce9c;
+    width: 50px;
+    height: 25px;
+    flex-shrink: 0;
+}
+.bottom-profile{
+    display: flex;
+   padding: 0px;
+   background-color: #c1bfbf;
+   border-radius: 10px;
+   gap:35px;
+   padding: 8px;
+}
+#icon-profile{
+    background-color: #2E21A2;
+    color: white;
+    width: 35px;
+    height: 30px;
+    padding: 5px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 0px 7px black;
+}
+#user-name{
+    color: white;
+    font-weight: bold;
+}
+.logout-link{
+    padding: 0px;
+}
+.logout-link:hover {
+  color: #f44336; /* red hover */
 }

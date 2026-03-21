@@ -4,7 +4,10 @@ import {
   LayoutDashboard,
   PlusSquare,
   Folder,
-  User
+  User,
+  LogOut,
+  Moon,
+  FileText, Clock, CheckCircle, Wrench,   RefreshCw, Calendar, Eye,Home
 } from "lucide-react";
 import Profile from "../components/Profile";
 import RaiseComplaint from "../components/RaiseComplaint";
@@ -28,7 +31,7 @@ function Dashboard_user(){
                   </div>
                     
                <Link to="/dashboard" >
-                 <LayoutDashboard size={20}/> Dashboard
+                 <Home size={20}/> Dashboard
                </Link>
 
                <Link to="/raiseComplaint">
@@ -44,6 +47,14 @@ function Dashboard_user(){
                </Link>
                 </div>
                 <div className="bottom">
+                  <Link > <Moon size={20} />Dark Mode</Link>
+                  <div className="bottom-profile">
+                    <div id="icon-profile">A</div>
+                    <div id="user-name" style={{color: "#2E21A2"}}>ANIYA  <div style={{fontSize:"12px" , color:"black"}}>Student</div></div>
+                    <Link to="/" style={{padding:"0px", borderRadius:"0px",  display: "inline-flex",
+  alignItemslignitems: "center",
+ transition : "0.3s" }} ><LogOut size={20} className="logout-link"/> </Link>
+                  </div>
 
                 </div>
 
@@ -64,9 +75,17 @@ function Dashboard_user(){
                     </div>
 
                 </div>
-                <div id="complaint-btn">
-                  <button><Link to="/raiseComplaint">+ Raise New Complaint</Link></button> 
+                <div className="Complaint-section">
+                  <div><h2>Recent Complaints Section</h2></div>
+                  <div id="complaint-stats">
+                    <div className="cards-recentcomplaint"><div className="icon-recent"><FileText size={18} /></div>Complaint Title</div>
+                    <div className="cards-recentcomplaint"><div className="icon-recent"><Folder size={18} /></div>Category</div>
+                    <div className="cards-recentcomplaint"><div className="icon-recent"><RefreshCw size={18} /></div>Status (Pending / Resolved / In Progress)</div>
+                    <div className="cards-recentcomplaint"><div className="icon-recent">📆</div>Date</div>
+                    <div className="cards-recentcomplaint"><div className="icon-recent"><Eye size={18} /></div>View button</div>
+                  </div>
                 </div>
+                
             </div>
            </div>
 
