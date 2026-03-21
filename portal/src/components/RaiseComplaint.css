@@ -6,3 +6,72 @@ body{
 main{
     min-height: 100vh;
 }
+.Header{
+    width: 1425px;
+    height: 150px;
+    background-color: rgb(233, 191, 119);
+    color: #2E21A2;
+    padding: 10px;
+    margin-top: 20px;
+    margin-left: 25px;
+    border-radius: 10px;
+    padding-bottom: 18px;
+
+}
+.Header h2{
+    display: flex;
+    color: red;
+    justify-content: center;
+    font-size: 35px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+   
+    
+}
+.Header div{
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+}
+.body{
+    background-color: #fcfcff;
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+    height: 900px;
+    margin: 20px auto;
+    border-radius: 20px;
+    box-shadow: 5px 4px 15px lightgoldenrodyellow;
+}
+.body h1{
+    background-color: #2E21A2;
+    padding: 40px;
+    text-align: center;
+     border-radius: 9px;
+     margin-top: 0px;
+
+}
+.body button{
+    background-color: #2E21A2;
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+    width: 600px;
+    margin-top: 30px;
+}
+#info-part{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 30px;
+    font-weight: bold;
+}
+.input-title{
+    color: black;
+}
+.input-info{
+    border-radius: 10px;
+    padding: 10px;
+}
