@@ -1,16 +1,23 @@
 /* Reset */
-
+* {
+    transition: all 0.2s ease-in-out;
+}
+#content {
+    max-width: 1300px;
+    margin: auto;
+}
 body{
     margin:0;
     padding:0;
     font-family: Arial, Helvetica, sans-serif;
-    background-color:#2E21A2;
+    /* background-color:#2E21A2; */
 }
 
 /* Main container */
 
 #main{
     min-height:100vh;
+    background: #0F172A;
 }
 
 /* ================= PAGE CONTENT ================= */
@@ -25,21 +32,29 @@ body{
 /* Left text */
 
 #left{
-    color:white;
+    color:#E2E8F0;
     max-width:500px;
+    line-height: 1.6;
 }
 
 #left h2{
     font-size:36px;
     margin-bottom:10px;
+    color: #F1F5F9;
 }
 
 #left h4{
     font-weight:400;
+    color: #94A3B8;
 }
 
-#left p{
+/* #left p{
     font-size:18px;
+} */
+.highlight-text {
+    color: #38BDF8;
+    font-size: 22px;
+    font-weight: 600;
 }
 
 /* Right Image */
@@ -48,15 +63,23 @@ body{
     width:600px;
     height:auto;
     border-radius: 30px;
-    box-shadow: 0px 0px 40px black;
+     box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+     
+
 }
+#right img:hover{
+    transform:translateY(-5px)scale(1.02);;
+    transition: 0.3s;
+}
+
 .typewriter {
-    color: rgb(225, 223, 86);
+ color: #38BDF8;
+border-right: 0.15em solid #38BDF8;
   font-size: 2.5rem;
   white-space: nowrap;
   overflow: hidden;
    width: 31ch;; 
-  border-right: 0.15em solid #000;
+  border-right: 0.15em solid #38BDF8;
   animation: typing 3s steps(31, end), blink 0.5s step-end infinite alternate;
 }
 /* reveal 1s ease forwards 4s */
@@ -81,59 +104,51 @@ body{
     /* border: 2px solid red;*/
 } 
 
-/* #b1,#b2,#b3{
-    display:flex;
-    align-items:center;
-    gap:15px;
-    border-radius: 8px;
-    border: 1px solid white;
-    width: 350px;
-    height: 70px;
-    padding: 12px;
-    text-align: center;
-   color:white;
-    backdrop-filter: blur(6px);
-    box-shadow:0px 5px 15px rgba(0,0,0,0.3);
-  transition:0.3s;
-  background: rgba(255,255,255,0.08);
-} */
+
 #b1,#b2,#b3{
     display:flex;
     align-items:center;
     gap:10px;
-
     width:170px;
     flex-shrink: 0;
     height:60px;
-
     padding:10px 14px;
-
     border-radius:10px;
-    border:1px solid rgba(255,255,255,0.3);
-
-    background:rgba(255,255,255,0.08);
     backdrop-filter:blur(6px);
-
-    color:white;
-
-    box-shadow:0px 5px 12px rgba(0,0,0,0.3);
-
     transition:0.3s;
+    background: #1E293B;
+    border: 1px solid #334155;
+    color: #E2E8F0;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
 }
 
 /* Hover effect */
 
 #b1:hover,#b2:hover,#b3:hover{
     transform:translateY(-4px);
-    background:rgba(255,255,255,0.18);
-     box-shadow:0px 8px 20px rgba(255,255,255,0.25);
+     box-shadow:0px 2px 7px rgba(255,255,255,0.25);
+      border-color: #38BDF8;
 }
+
 
 .icon{
     font-size:20px;
-    color:#55efc4;
+    color:#38BDF8;
+    filter: drop-shadow(0 0 6px rgba(56, 189, 248, 0.5));
 }
-
+.primary-btn {
+    background: #38BDF8;
+    color: #0F172A;
+    border: none;
+    border-radius: 12px;
+    /* width: 190px; */
+    height: 50px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
 .stat-text{
     display:flex;
     flex-direction:column;
@@ -147,7 +162,7 @@ body{
 .stat-text p{
     margin:0;
     font-size:13px !important;;
-    opacity:0.8;
+    opacity:0.7;
 }
 #below-boxes{
     display: flex;
@@ -161,11 +176,27 @@ body{
     text-decoration: none;
 }
 .primary-btn:hover{
-transition:0.3s;
-     transform:translateY(-4px);
-
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+     transform:translateY(-3px);
+}
+.secondary-btn {
+    background: transparent;
+    border: 1px solid #334155;
+    color: #E2E8F0;
+    border-radius: 12px;
+    /* width: 190px; */
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+.primary-btn,
+.secondary-btn {
+    width: auto;
+    padding: 12px 18px;
 }
 .secondary-btn:hover{
-    transition:0.3s;
-     transform:translateY(-4px);
+    background: rgba(56, 189, 248, 0.1);
+     transform:translateY(-3px);
 }

@@ -22,7 +22,7 @@ function Interface(){
                         Empowering students and administrators with a modern, efficient platform for seamless complaint resolution
                         and transparent communication.
                     </h4>
-                    <p style={{color: "rgb(205, 62, 30)" , fontSize: "30px", fontWeight: "bold"}}>Raise and track complaints easily.</p>
+                    <p className="highlight-text">Raise and track complaints easily.</p>
           <div id="below-left">
                     <div id="b1">
     <FaCheckCircle className="icon"/>

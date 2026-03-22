@@ -19,37 +19,42 @@ function Navbar({type , toggleSidebar}){
             <div id="nav-links">
                 {type === "Interface" && (
                     <>
-                     <button className="nav-login-btn">
                     <Link to="/login">
+                     <button className="nav-login-btn">
+                    
                         <FaUser style={{marginRight:"5px"}}/>
                         Login
-                    </Link>
+                    
                 </button>
+                </Link>
 
-                <button className="nav-signup-btn">
-                    <Link to="/signup">Sign Up</Link>
+              <Link to="/signup">  <button className="nav-signup-btn">
+                    Sign Up
                 </button>
+                </Link>
                     </>
 
                 )}
 
                 {type === "loginpage" &&(
                     <>
-                    <button className="nav-signup-btn">
-                    <Link to="/signup">Sign Up</Link>
-                </button>
+                   <Link to="/signup"> <button className="nav-signup-btn">
+                    Sign Up
+                </button></Link>
                     
                     </>
                 )}
 
                 {type === "signup" &&(
                     <>
-                     <button className="nav-login-btn">
                     <Link to="/login">
+                     <button className="nav-login-btn">
+                    
                         <FaUser style={{marginRight:"5px"}}/>
                         Login
-                    </Link>
+                   
                 </button>
+                 </Link>
                     </>
                 )
 
@@ -65,9 +70,9 @@ function Navbar({type , toggleSidebar}){
                     
                    <div className="btn"> <Link to="/dashboard" className="dash-home-link"><Home size={20}/></Link>
                    {/* <Link id="developer-btn"> <button>Developer</button></Link> */}
-                    <button className="nav-btn">
-                        <Link to="/">Logout</Link>
-                    </button></div>
+                   <Link to="/"> <button className="nav-btn">
+                        Logout
+                    </button></Link></div>
                     
                     </>
                 )}
