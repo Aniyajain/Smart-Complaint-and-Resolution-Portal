@@ -25,7 +25,7 @@ function Dashboard_user(){
              <div id="sidebar">
                 <div>
                   <div id="top-sidebar">
-                    <img src={logo} alt="logo"  style={{height:"40px", width:"40px" , borderRadius:"20px" , padding:"10px"}}/>
+                    <Link  to="/" style={{margin: "0px" , padding: "0px"}}><img src={logo} alt="logo"  style={{height:"40px", width:"40px" , borderRadius:"20px" , padding:"10px"}}/></Link>
                     <h1>SCRP</h1>
                     <p>Complaint System</p>
                   </div>
@@ -49,7 +49,7 @@ function Dashboard_user(){
                 <div className="bottom">
                   <Link > <Moon size={20} />Dark Mode</Link>
                   <div className="bottom-profile">
-                    <div id="icon-profile">A</div>
+                   <Link to="/profile" style={{margin: "0px" , padding: "0px"}}> <div id="icon-profile">A</div></Link>
                     <div id="user-name" style={{color: "#2E21A2"}}>ANIYA  <div style={{fontSize:"12px" , color:"black"}}>Student</div></div>
                     <Link to="/" style={{padding:"0px", borderRadius:"0px",  display: "inline-flex",
   alignItemslignitems: "center",

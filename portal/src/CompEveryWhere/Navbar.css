@@ -102,3 +102,31 @@
 a {
     text-decoration: none;
 }
+.dash-home-link{
+    color:black;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center; 
+    
+}
+.dash-home-link:hover{
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: #dcdcdc;
+    /* transition: 0.3s; */
+   
+    
+}
+.btn{
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+/* #developer-btn{
+
+    width:60px;
+
+} */

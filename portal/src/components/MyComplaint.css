@@ -7,3 +7,108 @@ main{
     min-height: 100vh;
     /* height: 100vh; */
 }
+.DashboardCards{
+    display: flex;
+    justify-content: space-evenly;
+   
+}
+.cards{
+    background-color: rgba(240, 255, 255, 0.89);
+    border-radius: 10px;
+    width: 240px;
+    padding: 17px;
+    color:rgb(8, 0, 255);
+    height: 90px;
+    text-align: center;
+    margin-top: 50px;
+    font-weight: bold;
+    font-size: 20px;
+}
+.searching-filter{
+    display: flex;
+    margin: 50px auto;
+
+}
+.filter-bar{
+    width: 660px;
+    border: 2px solid rgb(208, 255, 0);
+    background-color: rgb(247, 250, 252);
+    border-radius: 10px;
+    padding: 13px;
+    margin-left: 270px;
+    
+}
+.filter{
+    border-radius: 10px;
+    width: 110px;
+    color: black;
+    text-align: center;
+    height: 43px;
+    padding: 10px;
+    border: 2px solid rgb(217, 255, 0);
+    margin-left: 6px;
+    background-color: rgb(247, 250, 252);
+}
+.Complaint-Cards-List{
+    background-color: aliceblue;
+    width: 91%;
+    min-width: 1100px;
+    padding: 20px;
+    border: 3px solid yellow ;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    margin-left: 50px;
+    color: black;
+    height: 800px;
+    gap: 14px;
+}
+.L1card{
+    background-color: beige;
+    padding: 19px;
+    border-radius: 30px;
+    width: 95%;
+    min-width: 980px;
+    height: 200px;
+    border: 3px solid black;
+    box-shadow: 0px 0px 7px black;
+}
+.L2card{
+    background-color: rgba(178, 234, 152, 0.692);
+    padding: 19px;
+    border-radius: 30px;
+    width: 95%;
+    min-width: 980px;
+    height: 200px;
+    border: 3px solid black;
+    box-shadow: 0px 0px 7px black;
+}
+.L3card{
+    background-color: rgba(234, 163, 231, 0.778);
+    padding: 19px;
+    border-radius: 30px;
+    width: 95%;
+    min-width: 980px;
+    height: 200px;
+    border: 3px solid black;
+    box-shadow: 0px 0px 7px black;
+}
+.L1footerpart{
+    display: flex;
+    justify-content: space-between;
+}
+.L1footerpart button{
+    width: 90px;
+    background-color: rgb(103, 169, 226);
+    gap: 10px;
+    color: black;
+}
+
+.L1title{
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+}
+.L1footerpart p{
+    font-weight: bold;
+}

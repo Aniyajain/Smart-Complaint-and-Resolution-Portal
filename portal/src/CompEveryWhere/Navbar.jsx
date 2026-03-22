@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { FaUser } from "react-icons/fa";
+import {Home}from "lucide-react";
 import logo from "../assets/logo.png";
 import "./Navbar.css";
 
@@ -62,10 +63,11 @@ function Navbar({type , toggleSidebar}){
                 {type === "dashboard" &&(
                     <>
                     
-                    
+                   <div className="btn"> <Link to="/dashboard" className="dash-home-link"><Home size={20}/></Link>
+                   {/* <Link id="developer-btn"> <button>Developer</button></Link> */}
                     <button className="nav-btn">
                         <Link to="/">Logout</Link>
-                    </button>
+                    </button></div>
                     
                     </>
                 )}
