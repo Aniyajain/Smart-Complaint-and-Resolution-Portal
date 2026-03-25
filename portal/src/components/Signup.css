@@ -5,12 +5,19 @@ body{
 
 #main{
     min-height:100vh;
+     background: #0F172A;
+
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding-top: 70px; */
 }
 
 /* Signup Box */
 
 #box{
-    width:540px;
+    width:460px;
     background-color:aliceblue;
     border:2px solid black;
     margin:50px auto;
@@ -18,6 +25,7 @@ body{
     overflow:hidden;
     text-align:center;
 }
+
 
 /* Blue Header */
 

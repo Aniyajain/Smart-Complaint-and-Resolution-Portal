@@ -18,8 +18,8 @@ function Loginpage(){
              <Navbar  type="loginpage" />
 
             <div id="login-box">
-                <div style={{background: "rgb(37,107,226)", color:"white", borderRadius: "10px", height:"130px", textAlign:"center", padding: "5px" }}><h1>Welcome Back </h1>
-                <p >Login  to your account </p></div>
+                <div ><h1>Welcome Back </h1>
+                <p  style={{color:"#94A3B8"}}>Login  to your account </p></div>
 
 
                 <label className="label-box"><FaEnvelope className="label-icon"/>Email Address<span className="required">*</span></label>
