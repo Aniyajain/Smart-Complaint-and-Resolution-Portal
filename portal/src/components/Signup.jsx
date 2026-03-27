@@ -9,7 +9,8 @@ function Signup(){
 
             <Navbar type="signup"  />
 
-            <div id="box">
+            <div  className="form-wrapper">
+                <div id="box">
 
                 {/* Header */}
                 <div id="signup-header">
@@ -48,11 +49,12 @@ function Signup(){
                     <button className="signup-btn">Signup</button>
 
                     <p>
-                        Already signed up? <Link to="/login" style={{color: "rgb(37,107,226)"}}>Login</Link>
+                        Already signed up? <Link to="/login" style={{color:"#38BDF8"}}>Login</Link>
                     </p>
 
                 </div>
 
+            </div>
             </div>
         </div>
     )

@@ -14,7 +14,7 @@ function Loginpage(){
     return(
         <div id="c1">
 
-            {/* Navbar */}
+          
              <Navbar  type="loginpage" />
 
             <div id="login-box">

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
-import sideimg from "../assets/side image.png";
+import sideimg from "../assets/sideimage.png";
 import { FaUser } from "react-icons/fa";
 import Navbar from "../CompEveryWhere/Navbar";
 import "./Interface.css";
