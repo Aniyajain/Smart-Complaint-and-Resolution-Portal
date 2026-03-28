@@ -12,11 +12,27 @@ import {
 import Profile from "../components/Profile";
 import RaiseComplaint from "../components/RaiseComplaint";
 import logo from "../assets/logo.png";
+import { useState } from "react";
 
-
+import { useEffect } from "react";
 import "./Dashboard_user.css";
+import { useNavigate } from "react-router-dom";
 
 function Dashboard_user(){
+  const navigate = useNavigate();
+  const [stats , setStats] = useState({
+    total: 1,
+    pending: 1, 
+    resolved: 0,
+    inProgess: 1
+  });
+  const [dark, setDark] = useState(true);
+  const user = JSON.parse(localStorage.getItem("user"));
+  useEffect(() => {
+  if (!user) {
+    navigate("/login");
+  }
+}, [user, navigate]);
     return(
         <div>
             <Navbar type="dashboard"/>
@@ -47,10 +63,10 @@ function Dashboard_user(){
                </Link>
                 </div>
                 <div className="bottom">
-                  <Link > <Moon size={20} />Dark Mode</Link>
+                  <Link  onClick={() => setDark(!dark)}> <Moon size={20} />{dark ? "Light Mode" : "Dark Mode"}</Link>
                   <div className="bottom-profile">
                    <Link to="/profile" style={{margin: "0px" , padding: "0px"}}> <div id="icon-profile">A</div></Link>
-                    <div id="user-name" style={{color: "#2E21A2"}}>ANIYA  <div style={{fontSize:"12px" , color:"black"}}>Student</div></div>
+                    <div id="user-name" style={{color: "#2E21A2"}}>{user?.firstName || "User"}  <div style={{fontSize:"12px" , color:"black"}}>Student</div></div>
                     <Link to="/" style={{padding:"0px", borderRadius:"0px",  display: "inline-flex",
   alignItemslignitems: "center",
  transition : "0.3s" }} ><LogOut size={20} className="logout-link"/> </Link>
@@ -62,16 +78,16 @@ function Dashboard_user(){
             </div>
             <div className="main-content">
                 <div className="main-center">
-                    <h2>Welcome back, Aniya 👋</h2>
+                    <h2>Welcome back, {user?.firstName} 👋</h2>
 <h4>Track and manage your complaints </h4>
                 </div>
                 <div className="below-maincenter">
                     <div id="box1"><h2 >Your Overview</h2></div>
                     <div className="cardContainer">
-                      <div className="stat-card"><div className="emoji-box blue">📝</div> <h2>1</h2>Total Complaints</div>
-                    <div className="stat-card"><div className="emoji-box yellow">⏳</div><h2>1</h2>Pending</div>
-                    <div className="stat-card"> <div className="emoji-box green">✅</div><h2>0</h2>Resolved</div>
-                    <div className="stat-card"><div className="emoji-box orange">🚧</div><h2>1</h2> In Progress</div>
+                      <div className="stat-card"><div className="emoji-box blue">📝</div> <h2>{stats.total}</h2>Total Complaints</div>
+                    <div className="stat-card"><div className="emoji-box yellow">⏳</div><h2>{stats.pending}</h2>Pending</div>
+                    <div className="stat-card"> <div className="emoji-box green">✅</div><h2>{stats.resolved}</h2>Resolved</div>
+                    <div className="stat-card"><div className="emoji-box orange">🚧</div><h2>{stats.inProgess}</h2> In Progress</div>
                     </div>
 
                 </div>

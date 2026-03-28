@@ -217,3 +217,12 @@ button:hover{
 .logout-link:hover {
   color: #f44336; /* red hover */
 }
+.dark {
+  background-color: #0f172a;
+  color: white;
+}
+
+.light {
+  background-color: #ffffff;
+  color: black;
+}

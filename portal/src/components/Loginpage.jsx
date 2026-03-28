@@ -3,13 +3,24 @@ import Navbar from "../CompEveryWhere/Navbar";
 import { FaEnvelope, FaLock } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import "./Loginpage.css";
+import { useState } from "react";
+
+
 
 function Loginpage(){
     const navigate = useNavigate();
+    const [email, setEmail] = useState("");
+    const [password , setPassword] = useState("");
 
     const handleLogin = ()=>{
         //later on backend logic here
         navigate("/dashboard");
+        if(email === "admin@gmail.com" && password === "1234"){
+            navigate("/dashboard");
+        }else{
+            alert("Invalid Credentials ");
+            navigate("/login");
+        }
     };
     return(
         <div id="c1">
@@ -29,6 +40,8 @@ function Loginpage(){
                     type="email"
                     placeholder="Enter your Email-Id"
                     className="input"
+                    onChange={(e)=>setEmail(e.target.value)}
+                    value={email}
                 />
 
                 <br />
@@ -38,6 +51,8 @@ function Loginpage(){
                     type="password"
                     placeholder="Enter your Password"
                     className="input"
+                    onChange={(e)=>setPassword(e.target.value)}
+                    value={password}
                 />
                 </div>
 

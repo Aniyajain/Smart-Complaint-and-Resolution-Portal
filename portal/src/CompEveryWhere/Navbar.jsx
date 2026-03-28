@@ -3,8 +3,14 @@ import { FaUser } from "react-icons/fa";
 import {Home}from "lucide-react";
 import logo from "../assets/logo.png";
 import "./Navbar.css";
+import { useNavigate } from "react-router-dom";
 
 function Navbar({type , toggleSidebar}){
+    const navigate = useNavigate();
+    const handleLogout =()=>{
+        localStorage.removeItem("user");
+        navigate("/");
+    };
     return(
         <nav className="navbar">
 {/* left side */}
@@ -70,9 +76,9 @@ function Navbar({type , toggleSidebar}){
                     
                    <div className="btn"> <Link to="/dashboard" className="dash-home-link"><Home size={20}/></Link>
                    {/* <Link id="developer-btn"> <button>Developer</button></Link> */}
-                   <Link to="/"> <button className="nav-btn">
+                    <button className="nav-btn" onClick={handleLogout}>
                         Logout
-                    </button></Link></div>
+                    </button ></div>
                     
                     </>
                 )}
