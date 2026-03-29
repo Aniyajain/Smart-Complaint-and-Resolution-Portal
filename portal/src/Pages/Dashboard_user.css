@@ -217,12 +217,73 @@ button:hover{
 .logout-link:hover {
   color: #f44336; /* red hover */
 }
-.dark {
+ .dark {
   background-color: #0f172a;
+  color: #e2e8f0;
+}
+
+.dark #sidebar {
+  background-color: #1e293b;
+}
+
+.dark #top-sidebar {
+  background-color: #334155;
   color: white;
 }
 
+.dark .stat-card {
+  background-color: #1e293b;
+  color: #38bdf8;
+}
+
+.dark .cards-recentcomplaint {
+  background-color: #1e293b;
+  color: white;
+}
+
+.dark .main-center {
+  background-color: #1e293b;
+}
+
+.dark .bottom-profile {
+  background-color: #334155;
+}
+
+.dark #user-name {
+  color: white !important;
+}
 .light {
   background-color: #ffffff;
+  color: #1e293b;
+}
+
+.light #sidebar {
+  background-color: #f3f6fb;
+}
+
+.light #top-sidebar {
+  background-color: #e2e8f0;
   color: black;
+}
+
+.light .stat-card {
+  background-color: #ded5d5;
+  color: #2E21A2;
+}
+
+.light .cards-recentcomplaint {
+  background-color: #cdc9c9;
+  color: #2E21A2;
+}
+
+.light .main-center {
+  background-color: #e2e8f0;
+}
+
+.light .bottom-profile {
+  background-color: #c1bfbf;
+}
+
+.light #user-name {
+  color: #2E21A2 !important;
 }

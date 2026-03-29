@@ -34,7 +34,7 @@ function Dashboard_user(){
   }
 }, [user, navigate]);
     return(
-        <div>
+        <div className={dark ? "dark" : "light"}>
             <Navbar type="dashboard"/>
             
            <div className="dashboard-container">
@@ -61,9 +61,9 @@ function Dashboard_user(){
                <Link to="/profile">
                  <User size={20}/> Profile
                </Link>
-                </div>
+                </div >
                 <div className="bottom">
-                  <Link  onClick={() => setDark(!dark)}> <Moon size={20} />{dark ? "Light Mode" : "Dark Mode"}</Link>
+                  <button className="theme-btn" onClick={() => setDark(!dark)}> <Moon size={20} />{dark ? "Light Mode" : "Dark Mode"}</button>
                   <div className="bottom-profile">
                    <Link to="/profile" style={{margin: "0px" , padding: "0px"}}> <div id="icon-profile">A</div></Link>
                     <div id="user-name" style={{color: "#2E21A2"}}>{user?.firstName || "User"}  <div style={{fontSize:"12px" , color:"black"}}>Student</div></div>
