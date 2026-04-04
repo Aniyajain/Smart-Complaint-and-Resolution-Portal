@@ -10,8 +10,6 @@ function RaiseComplaint(){
         title:"",
         category: "",
         description : "",
-
-
         location:"",
         priority: ""
     });
