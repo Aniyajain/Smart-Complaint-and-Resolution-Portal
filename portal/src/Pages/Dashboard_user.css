@@ -158,11 +158,14 @@ button:hover{
 #complaint-btn{
     margin: 100px 370px;
 }
-#complaint-stats{
-    display: flex;
-    justify-content: space-evenly;
-    
+
+    #complaint-stats {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
 }
+    
+
 .cards-recentcomplaint{
     background-color: #cdc9c9;
     border-radius: 10px;
@@ -286,4 +289,22 @@ button:hover{
 
 .light #user-name {
   color: #2E21A2 !important;
+}
+
+
+.status-Pending { color: #f59e0b; }
+.status-Resolved { color: #22c55e; }
+.status-In\ Progress { color: #3b82f6; }
+.cards-recentcomplaint button {
+  padding: 6px 12px;
+  border: none;
+  background: #38BDF8;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cards-recentcomplaint button:hover {
+  background: #0ea5e9;
 }

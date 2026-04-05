@@ -23,7 +23,7 @@ function Home(){
                 </div>
 
                 <div id="content">
-                    <h1>Welcome to Complaint Prtal</h1>
+                    <h1>Welcome to Complaint Portal</h1>
                 </div>
 
             </div>

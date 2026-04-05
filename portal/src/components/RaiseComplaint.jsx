@@ -1,3 +1,5 @@
+import { createComplaint } from "../api/ComplaintApi";
+
 import { Link } from "react-router-dom";
 import "./RaiseComplaint.css";
 import Navbar from "../CompEveryWhere/Navbar";
@@ -6,6 +8,14 @@ import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 function RaiseComplaint(){
+  const [formData, setFormData] = useState({
+  title: "",
+  category: "",
+  description: "",
+  status: "Pending"
+});
+
+const navigate = useNavigate();
     const[complaint , setComplaint] = useState({
         title:"",
         category: "",
