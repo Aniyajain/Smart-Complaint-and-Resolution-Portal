@@ -127,13 +127,7 @@
                   </div>
                   <div className="Complaint-section">
                     <div><h2>Recent Complaints Section</h2></div>
-                    {/* <div id="complaint-stats">
-                      <div className="cards-recentcomplaint"><div className="icon-recent"><FileText size={18} /></div>Complaint Title</div>
-                      <div className="cards-recentcomplaint"><div className="icon-recent"><Folder size={18} /></div>Category</div>
-                      <div className="cards-recentcomplaint"><div className="icon-recent"><RefreshCw size={18} /></div>Status (Pending / Resolved / In Progress)</div>
-                      <div className="cards-recentcomplaint"><div className="icon-recent">📆</div>Date</div>
-                      <div className="cards-recentcomplaint"><div className="icon-recent"><Eye size={18} /></div>View button</div>
-                    </div> */}
+                    
                     <div id="complaint-stats">
 
     {/* Header Row */}
