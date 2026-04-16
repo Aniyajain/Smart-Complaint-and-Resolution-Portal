@@ -127,46 +127,51 @@
                   </div>
                   <div className="Complaint-section">
                     <div><h2>Recent Complaints Section</h2></div>
-                    
-                    <div id="complaint-stats">
 
-    {/* Header Row */}
-    <div className="cards-recentcomplaint"><FileText size={18}/> Title</div>
-    <div className="cards-recentcomplaint"><Folder size={18}/> Category</div>
-    <div className="cards-recentcomplaint"><RefreshCw size={18}/> Status</div>
-    <div className="cards-recentcomplaint">📆 Date</div>
-    <div className="cards-recentcomplaint"><Eye size={18}/> View</div>
+                  <div className="table-container">
+  <table className="complaint-table">
+    <thead>
+      <tr>
+        <th><FileText size={16}/> Title</th>
+        <th><Folder size={16}/> Category</th>
+        <th><RefreshCw size={16}/> Status</th>
+        <th><Calendar size={16}/> Date</th>
+        <th><Eye size={16}/> Action</th>
+      </tr>
+    </thead>
 
-    {loading && (
-  <div style={{ gridColumn: "span 5", textAlign: "center" }}>
-    Loading...
-  </div>
-)}
+    <tbody>
+      {loading && (
+        <tr>
+          <td colSpan="5" style={{ textAlign: "center" }}>Loading...</td>
+        </tr>
+      )}
 
-{!loading && complaints.length === 0 && (
-  <div style={{ gridColumn: "span 5", textAlign: "center", padding: "20px" }}>
-    No complaints found 🚫
-  </div>
-)}
+      {!loading && complaints.length === 0 && (
+        <tr>
+          <td colSpan="5" style={{ textAlign: "center" }}>
+            No complaints found 🚫
+          </td>
+        </tr>
+      )}
 
-    {/* Dynamic Rows */}
-{!loading && complaints.slice(0,5).map((c) => (
-  <div key={c._id} style={{ display: "contents" }}>
-    <div className="cards-recentcomplaint">{c.title}</div>
-    <div className="cards-recentcomplaint">{c.category}</div>
-    <div className={`cards-recentcomplaint status-${c.status}`}>{c.status}</div>
-    <div className="cards-recentcomplaint">
-      {new Date(c.createdAt).toLocaleDateString()}
-    </div>
-    <div className="cards-recentcomplaint">
-      <button onClick={() => navigate(`/complaint/${c._id}`)}>
-  View
-</button>
-    </div>
-  </div>
-))}
-
-  </div>
+      {!loading && complaints.slice(0,5).map((c) => (
+        <tr key={c._id}>
+          <td>{c.title}</td>
+          <td>{c.category}</td>
+          <td className={`status-${c.status}`}>{c.status}</td>
+          <td>{new Date(c.createdAt).toLocaleDateString()}</td>
+          <td>
+            <button onClick={() => navigate(`/complaint/${c._id}`)}>
+              View
+            </button>
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>  
+  
                   </div>
                   
               </div>

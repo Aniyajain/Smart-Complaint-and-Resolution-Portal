@@ -1,17 +1,38 @@
 import { Link } from "react-router-dom";
 import "./MyComplaint.css"
 import Navbar from "../CompEveryWhere/Navbar";
+import { useEffect, useState } from "react";
+import { getComplaints } from "../api/ComplaintApi";
 function MyComplaint(){
+  const [complaints, setComplaints] = useState([]);
+  useEffect(() => {
+  fetchComplaints();
+}, []);
+
+const fetchComplaints = async () => {
+  try {
+    const res = await getComplaints();
+    console.log("API RESPONSE:", res.data); 
+    setComplaints(res.data);
+  } catch (err) {
+    console.error(err);
+  }
+};
     return(
         <div id="main">
             <Navbar type="dashboard"/>
 
-            <div>
+            <div className="my-container">
+                 {/* ✅ Header */}
+    <div className="Header">
+      <h2>📂 My Complaints</h2>
+      <p>Track, manage and update your complaints</p>
+    </div>
                 <div className="DashboardCards">
-                    <div className="cards"> 📋 Total <p>12</p></div>
-                    <div className="cards"> ⏳Pending <p>7</p></div>
-                    <div className="cards"> ✅ Resolved <p>5</p></div>
-                    <div className="cards">🔥 High Priority <p>2</p></div>
+                    <div className="cards"> 📋 Total <p>{complaints.length}</p></div>
+                    <div className="cards"> ⏳Pending <p>{complaints.filter(c => c.status === "Pending").length}</p></div>
+                    <div className="cards"> ✅ Resolved <p>{complaints.filter(c => c.status === "Resolved").length}</p></div>
+                    <div className="cards">🔥 High Priority <p>{complaints.filter(c => c.priority === "high").length}</p></div>
                 </div>
              <div className="searching-filter">
                    <div >
@@ -30,67 +51,36 @@ function MyComplaint(){
                 </div>
              </div>
              <div className="Complaint-Cards-List">
-                <h1> My Complains : </h1>
-                <div className="L1card">
-                    <div className="L1title">
-                        <h2>Water Leakage in Hostel </h2>
-                        <span> 🟡Pending</span>
-                        
-                    </div>
-                    <div className="L1title"><div>Infrastructure  </div>
-                    <span>22 March 2026</span> </div>
-                    <p>Water leakage near bathroom causing inconvenience...</p>
-                    <div className="L1footerpart">
-                        <p>🔥 High Priority</p>
-                       <div id="footer-button">
-                         <button> View </button>
-                        <button> Edit</button>
-                        <button>Delete</button>
-                       </div>
-                    </div>
+{complaints.length === 0 ? (
+  <p>No complaints found</p>
+) : (
+  complaints.map((c) =>  (
+ <div className="complaint-card" key={c._id}>
+  <div className="card-header">
+    <h2>{c.title}</h2>
+    <span className={`status ${c.status?.toLowerCase()}`}>
+      {c.status === "Pending" ? "🟡" : "✅"} {c.status}
+    </span>
+  </div>
 
-                    
-                </div>
-                <div className="L2card">
-                    <div className="L1title">
-                        <h2>Water Leakage in Hostel </h2>
-                        <span> 🟡Pending</span>
-                        
-                    </div>
-                    <div className="L1title"><div>Infrastructure  </div>
-                    <span>22 March 2026</span> </div>
-                    <p>Water leakage near bathroom causing inconvenience...</p>
-                    <div className="L1footerpart">
-                        <p>🔥 High Priority</p>
-                       <div id="footer-button">
-                         <button> View </button>
-                        <button> Edit</button>
-                        <button>Delete</button>
-                       </div>
-                    </div>
+  <div className="card-meta">
+    <span>{c.category}</span>
+    <span>{new Date(c.createdAt).toLocaleDateString()}</span>
+  </div>
 
-                    
-                </div>
-                <div className="L3card">
-                    <div className="L1title">
-                        <h2>Water Leakage in Hostel </h2>
-                        <span> 🟡Pending</span>
-                        
-                    </div>
-                    <div className="L1title"><div>Infrastructure  </div>
-                    <span>22 March 2026</span> </div>
-                    <p>Water leakage near bathroom causing inconvenience...</p>
-                    <div className="L1footerpart">
-                        <p >🔥 High Priority</p>
-                       <div id="footer-button">
-                         <button> View </button>
-                        <button> Edit</button>
-                        <button>Delete</button>
-                       </div>
-                    </div>
+  <p>{c.description}</p>
 
-                    
-                </div>
+  <div className="card-footer">
+    <p>🔥 {c.priority} Priority</p>
+
+    <div className="footer-buttons">
+      <button>View</button>
+      <button>Edit</button>
+      <button>Delete</button>
+    </div>
+  </div>
+</div>
+)))}
              </div>
             </div>
 

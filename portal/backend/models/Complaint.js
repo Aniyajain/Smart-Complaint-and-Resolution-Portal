@@ -33,6 +33,10 @@ const complaintSchema = new mongoose.Schema(
       enum: ["Pending", "In Progress", "Resolved"],
       default: "Pending",
     },
+    email: {
+  type: String,
+  required: true
+}
   },
   {
     timestamps: true, // auto adds createdAt & updatedAt

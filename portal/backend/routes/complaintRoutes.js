@@ -3,6 +3,7 @@ const router = express.Router();
 const Complaint = require("../models/Complaint");
 const getPriority = require("../utils/priorityPredictor");
 
+
 // ✅ CREATE Complaint
 // router.post("/", async (req, res) => {
 //   try {
@@ -16,6 +17,7 @@ const getPriority = require("../utils/priorityPredictor");
 // });
 router.post("/", async (req, res) => {
   try {
+    console.log("REQ BODY:", req.body);
     const { description } = req.body;
 
     // 🔥 ML Logic Applied
@@ -28,15 +30,28 @@ router.post("/", async (req, res) => {
 
     const savedComplaint = await complaint.save();
 
+    console.log("SAVED COMPLAINT:", savedComplaint);
+
     res.status(201).json(savedComplaint);
   } catch (error) {
+     console.log("❌ SAVE ERROR:", error);
     res.status(500).json({ error: error.message });
   }
 });
 // ✅ GET all complaints
+
 router.get("/", async (req, res) => {
   try {
-    const complaints = await Complaint.find().sort({ createdAt: -1 });
+    const { email } = req.query;   // 🔥 get email from frontend
+
+    let complaints;
+
+    if (email) {
+      complaints = await Complaint.find({ email }).sort({ createdAt: -1 });
+    } else {
+      complaints = await Complaint.find().sort({ createdAt: -1 });
+    }
+
     res.json(complaints);
   } catch (error) {
     res.status(500).json({ error: error.message });

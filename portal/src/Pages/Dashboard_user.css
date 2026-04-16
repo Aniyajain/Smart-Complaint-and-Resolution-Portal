@@ -11,24 +11,25 @@
 .dashboard-container {
   display: flex;
   min-height: calc(100vh - 70px);
-  overflow: hidden;
+  /* overflow: hidden; */
+  align-items: stretch;
 }
 .main-content {
-  margin-left: 240px;   /* match sidebar width */
+  margin-left: 0px;   /* match sidebar width */
   padding: 30px;
-  width: calc(100% - 240px);
-  overflow: hidden;
+  width: 100%;
+  /* overflow: hidden; */
 }
 /* #complaint-stats > div:nth-child(-n+5) {
   font-weight: 700;
   color: #94a3b8;
   border-bottom: 2px solid rgba(255,255,255,0.2);
 } */
-#complaint-stats {
+/* #complaint-stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 10px;
-}
+} */
 .cardContainer{
     display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -37,16 +38,15 @@
 /* FIX SIDEBAR */
 #sidebar {
   width: 240px;
-  position: fixed;   /* 🔥 important */
-  top: 70px;
-  left: 0;
-  height: calc(100vh - 70px);
   padding: 20px;
   background-color: #1e293b;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  z-index: 100;
+
+  min-height: calc(100vh - 70px);  /* ✅ full height below navbar */
+  border-right: 1px solid rgba(255,255,255,0.05);
 }
 
 .Complaint-section {
@@ -106,9 +106,9 @@
 
 .main-center,
 .stat-card,
-.cards-recentcomplaint {
+/* .cards-recentcomplaint {
   transform: translateZ(0);
-}
+} */
 .below-maincenter{
     display: flex; 
     flex-direction: column;
@@ -198,19 +198,19 @@ button:hover{
 }
     
 
-.cards-recentcomplaint {
+/* .cards-recentcomplaint {
   background-color: #1e293b;   /* 🔥 solid background */
-  border-radius: 10px;
-  padding: 12px;
+  /* border-radius: 10px; */
+  /* padding: 12px;
   margin-bottom: 10px;
   font-size: 15px;
   overflow: hidden;
-}
-.cards-recentcomplaint button {
+} */ */
+/* .cards-recentcomplaint button {
   width: auto;
   height: auto;
   padding: 6px 12px;
-}
+} */
 .icon-recent{
     border-radius: 7px;
     background-color: #7fce9c;
@@ -341,4 +341,83 @@ button:hover{
 ::-webkit-scrollbar-thumb {
   background: #38bdf8;
   border-radius: 10px;
+}
+
+.table-container {
+  margin-top: 20px;
+  overflow-x: auto;
+}
+
+.complaint-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #1e293b;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.complaint-table th {
+  text-align: left;
+  padding: 14px;
+  font-size: 14px;
+  color: #94a3b8;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.complaint-table td {
+  padding: 14px;
+  font-size: 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.complaint-table tr:hover {
+  background-color: rgba(56, 189, 248, 0.08);
+  transition: 0.2s;
+}
+
+.bottom {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;   /* ✅ adds proper spacing */   /* ✅ pushes it to bottom properly */
+}
+.theme-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+  padding: 10px 14px;
+
+  width: 220px;    /*  ✅ FIX  */
+    max-width: 100%;       /* safety */
+
+  border-radius: 10px;
+  background-color: #e2e8f0;
+  color: #1e293b;
+
+  font-size: 14px;
+  cursor: pointer;
+  align-self: flex-start;
+}
+.theme-btn:hover{
+    font-weight: bold;
+     
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+}
+.bottom-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 12px;
+  border-radius: 12px;
+
+  background: linear-gradient(145deg, #334155, #1e293b);
+  transition: 0.3s;
+}
+
+.bottom-profile:hover {
+  transform: translateY(-2px);
 }

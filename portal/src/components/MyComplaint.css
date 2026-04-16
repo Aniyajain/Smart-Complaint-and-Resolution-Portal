@@ -8,107 +8,138 @@ main{
     /* height: 100vh; */
 }
 .DashboardCards{
-    display: flex;
-    justify-content: space-evenly;
+    display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  margin: 25px 0;
    
 }
-.cards{
-    background-color: rgba(240, 255, 255, 0.89);
-    border-radius: 10px;
-    width: 240px;
-    padding: 17px;
-    color:rgb(8, 0, 255);
-    height: 90px;
-    text-align: center;
-    margin-top: 50px;
-    font-weight: bold;
-    font-size: 20px;
+.my-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 30px 0;
+}
+.cards {
+  background: #1e293b;
+  border-radius: 16px;
+  padding: 20px;
+  color: #38bdf8;
+
+  text-align: center;
+  font-weight: 600;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  transition: 0.3s;
+}
+
+.cards:hover {
+  transform: translateY(-5px);
 }
 .searching-filter{
-    display: flex;
-    margin: 50px auto;
+     display: flex;
+  gap: 10px;
+  margin: 20px 0;
+  margin-bottom: 25px;
+  align-items: center;
 
 }
 .filter-bar{
-    width: 660px;
-    border: 2px solid rgb(208, 255, 0);
-    background-color: rgb(247, 250, 252);
-    border-radius: 10px;
-    padding: 13px;
-    margin-left: 270px;
+    flex: 1;
+  max-width: 400px;
+
+  border-radius: 10px;
+  padding: 12px;
+
+  border: 1px solid rgba(255,255,255,0.1);
+  background: #0f172a;
+  color: white;
     
 }
 .filter{
     border-radius: 10px;
-    width: 110px;
-    color: black;
-    text-align: center;
-    height: 43px;
-    padding: 10px;
-    border: 2px solid rgb(217, 255, 0);
-    margin-left: 6px;
-    background-color: rgb(247, 250, 252);
+  padding: 10px 14px;
+  background: #1e293b;
+  color: white;
+  border: none;
+  cursor: pointer;
 }
 .Complaint-Cards-List{
-    background-color: aliceblue;
-    width: 91%;
-    min-width: 1100px;
-    padding: 20px;
-    border: 3px solid yellow ;
-    display: flex;
-    flex-direction: column;
-    border-radius: 15px;
-    margin-left: 50px;
-    color: black;
-    height: 800px;
-    gap: 14px;
+    width: 100%;
+  padding: 20px;
+
+  border-radius: 16px;
+  background: #1e293b;
+   
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
-.L1card{
-    background-color: beige;
-    padding: 19px;
-    border-radius: 30px;
-    width: 95%;
-    min-width: 980px;
-    height: 200px;
-    border: 3px solid black;
-    box-shadow: 0px 0px 7px black;
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.L2card{
-    background-color: rgba(178, 234, 152, 0.692);
-    padding: 19px;
-    border-radius: 30px;
-    width: 95%;
-    min-width: 980px;
-    height: 200px;
-    border: 3px solid black;
-    box-shadow: 0px 0px 7px black;
+
+.card-meta {
+  display: flex;
+  justify-content: space-between;
+  color: #94a3b8;
+  font-size: 14px;
+  margin: 8px 0;
 }
-.L3card{
-    background-color: rgba(234, 163, 231, 0.778);
-    padding: 19px;
-    border-radius: 30px;
-    width: 95%;
-    min-width: 980px;
-    height: 200px;
-    border: 3px solid black;
-    box-shadow: 0px 0px 7px black;
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
 }
+
+.footer-buttons button {
+  margin-left: 8px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: #38bdf8;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.status.pending { color: #f59e0b; }
+.status.resolved { color: #22c55e; }
 .L1footerpart{
     display: flex;
     justify-content: space-between;
 }
-.L1footerpart button{
-    width: 90px;
-    background-color: rgb(103, 169, 226);
-    gap: 10px;
-    color: black;
+
+/* ===== Complaint Card (NEW CLEAN DESIGN) ===== */
+.complaint-card {
+  background: #0f172a;
+  padding: 20px;
+  border-radius: 14px;
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+
+  transition: 0.3s;
 }
 
-.L1title{
-    display: flex;
-    justify-content: space-between;
-    font-weight: bold;
+.complaint-card:hover {
+  transform: translateY(-4px);
+  border-color: #38bdf8;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.5);
 }
-.L1footerpart p{
-    font-weight: bold;
+
+.complaint-card p {
+  margin: 10px 0;
+}
+
+/* Divider inside card */
+.card-footer {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255,255,255,0.08);
 }
