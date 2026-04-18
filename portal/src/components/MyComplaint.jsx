@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "./MyComplaint.css"
 import Navbar from "../CompEveryWhere/Navbar";
 import { useEffect, useState } from "react";
-import { getComplaints } from "../api/ComplaintApi";
+import { getComplaints } from "../api/complaintApi";
 function MyComplaint(){
   const [complaints, setComplaints] = useState([]);
   useEffect(() => {
@@ -10,8 +10,9 @@ function MyComplaint(){
 }, []);
 
 const fetchComplaints = async () => {
+  const email = "admin@gmail.com";
   try {
-    const res = await getComplaints();
+    const res = await getComplaints(email);
     console.log("API RESPONSE:", res.data); 
     setComplaints(res.data);
   } catch (err) {
@@ -32,7 +33,7 @@ const fetchComplaints = async () => {
                     <div className="cards"> 📋 Total <p>{complaints.length}</p></div>
                     <div className="cards"> ⏳Pending <p>{complaints.filter(c => c.status === "Pending").length}</p></div>
                     <div className="cards"> ✅ Resolved <p>{complaints.filter(c => c.status === "Resolved").length}</p></div>
-                    <div className="cards">🔥 High Priority <p>{complaints.filter(c => c.priority === "high").length}</p></div>
+                    <div className="cards">🔥 High Priority <p>{complaints.filter(c => c.priority?.toLowerCase() === "high").length}</p></div>
                 </div>
              <div className="searching-filter">
                    <div >

@@ -14,7 +14,7 @@
   import RaiseComplaint from "../components/RaiseComplaint";
   import logo from "../assets/logo.png";
   import { useState } from "react";
-  import { getComplaints } from "../api/ComplaintApi";
+  import { getComplaints } from "../api/complaintApi";
 
   import { useEffect } from "react";
   import "./Dashboard_user.css";
@@ -38,14 +38,16 @@
     }
   }, [user, navigate]);
   useEffect(() => {
-    fetchComplaints();
-  }, []);
+    if (user?.email) {
+    fetchComplaints();}
+  }, [user?.email]);
 
   const fetchComplaints = async () => {
+    const email = user?.email;
   try {
     setLoading(true); // 🔥 start loading
 
-    const res = await getComplaints();
+    const res = await getComplaints(email);
     setComplaints(res.data);
 
     const total = res.data.length;
@@ -88,7 +90,7 @@
                   <PlusSquare size={20}/> Raise Complaint
                 </Link>
 
-                <Link to="/myComplaint">
+                <Link to="/my-complaints">
                   <Folder size={20}/> My Complaints
                 </Link>
 
@@ -102,7 +104,7 @@
                     <Link to="/profile" style={{margin: "0px" , padding: "0px"}}> <div id="icon-profile">A</div></Link>
                       <div id="user-name" style={{color: "#2E21A2"}}>{user?.firstName || "User"}  <div style={{fontSize:"12px" , color:"black"}}>Student</div></div>
                       <Link to="/" style={{padding:"0px", borderRadius:"0px",  display: "inline-flex",
-    alignItemslignitems: "center",
+    alignItems: "center",
   transition : "0.3s" }} ><LogOut size={20} className="logout-link"/> </Link>
                     </div>
 
@@ -118,7 +120,7 @@
                   <div className="below-maincenter">
                       <div id="box1"><h2 >Your Overview</h2></div>
                       <div className="cardContainer">
-                        <div className="stat-card"><div className="emoji-box blue">📝</div> <h2>{stats.total}</h2>Total Complaints</div>
+                        <div className="stat-card"><div className="emoji-box blue">📝</div> <h2>{complaints.length}</h2>Total Complaints</div>
                       <div className="stat-card"><div className="emoji-box yellow">⏳</div><h2>{stats.pending}</h2>Pending</div>
                       <div className="stat-card"> <div className="emoji-box green">✅</div><h2>{stats.resolved}</h2>Resolved</div>
                       <div className="stat-card"><div className="emoji-box orange">🚧</div><h2>{stats.inProgress}</h2> In Progress</div>

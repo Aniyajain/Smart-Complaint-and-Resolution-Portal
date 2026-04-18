@@ -1,4 +1,4 @@
-import { createComplaint } from "../api/ComplaintApi";
+import { createComplaint } from "../api/complaintApi";
 
 import { Link } from "react-router-dom";
 import "./RaiseComplaint.css";
